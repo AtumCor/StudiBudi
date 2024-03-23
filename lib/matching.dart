@@ -161,11 +161,11 @@ class _MatchingScreenState extends State<MatchingScreen> {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: 'Match',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
-            label: 'Match',
+            label: 'Matches',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
