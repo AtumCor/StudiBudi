@@ -22,7 +22,7 @@ class User {
 class UserData {
   static final List<User> users = [
     User(
-      username: 'User1',
+      username: 'Alex Johnson',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'New York, NY',
       school: 'Stuyvesant High School',
@@ -30,7 +30,7 @@ class UserData {
       phoneNumber: '+12345678001',
     ),
     User(
-      username: 'User2',
+      username: 'Maria Garcia',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Los Angeles, CA',
       school: 'The Harker School',
@@ -38,7 +38,7 @@ class UserData {
       phoneNumber: '+12345678002',
     ),
     User(
-      username: 'User3',
+      username: 'John Smith',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Chicago, IL',
       school: 'Brooklyn Technical High School',
@@ -46,7 +46,7 @@ class UserData {
       phoneNumber: '+12345678003',
     ),
     User(
-      username: 'User4',
+      username: 'Sophia Williams',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Houston, TX',
       school: 'Phillips Academy',
@@ -54,31 +54,14 @@ class UserData {
       phoneNumber: '+12345678004',
     ),
     User(
-      username: 'User5',
+      username: 'David Miller',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Phoenix, AZ',
       school: 'Thomas Jefferson High School for Science and Technology',
       classes: ['Economics', 'Physical Education'],
       phoneNumber: '+12345678005',
-    ),
-    User(
-      username: 'User6',
-      pictureUrl: 'https://via.placeholder.com/150',
-      location: 'Philadelphia, PA',
-      school: 'Illinois Mathematics and Science Academy',
-      classes: ['Biology', 'Mathematics'],
-      phoneNumber: '+12345678006',
-    ),
-    User(
-      username: 'User7',
-      pictureUrl: 'https://via.placeholder.com/150',
-      location: 'San Antonio, TX',
-      school: 'The College Preparatory School',
-      classes: ['Physics', 'English Literature'],
-      phoneNumber: '+12345678007',
-    ),
-        User(
-      username: 'User8',
+    ),    User(
+      username: 'Ethan Davis',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'San Diego, CA',
       school: 'Maggie L. Walker Governor’s School',
@@ -86,7 +69,7 @@ class UserData {
       phoneNumber: '+12345678008',
     ),
     User(
-      username: 'User9',
+      username: 'Ava Martinez',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Dallas, TX',
       school: 'Basis Scottsdale',
@@ -94,7 +77,7 @@ class UserData {
       phoneNumber: '+12345678009',
     ),
     User(
-      username: 'User10',
+      username: 'Isabella Rodriguez',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'San Jose, CA',
       school: 'Stuyvesant High School',
@@ -102,7 +85,7 @@ class UserData {
       phoneNumber: '+12345678010',
     ),
     User(
-      username: 'User11',
+      username: 'Mason Lee',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Austin, TX',
       school: 'The Harker School',
@@ -110,7 +93,7 @@ class UserData {
       phoneNumber: '+12345678011',
     ),
     User(
-      username: 'User12',
+      username: 'Lucas Gonzalez',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Jacksonville, FL',
       school: 'Brooklyn Technical High School',
@@ -118,7 +101,7 @@ class UserData {
       phoneNumber: '+12345678012',
     ),
     User(
-      username: 'User13',
+      username: 'Mia Harris',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'San Francisco, CA',
       school: 'Phillips Academy',
@@ -126,7 +109,7 @@ class UserData {
       phoneNumber: '+12345678013',
     ),
     User(
-      username: 'User14',
+      username: 'Charlotte Young',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Columbus, OH',
       school: 'Thomas Jefferson High School for Science and Technology',
@@ -134,7 +117,7 @@ class UserData {
       phoneNumber: '+12345678014',
     ),
     User(
-      username: 'User15',
+      username: 'Amelia Hernandez',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Fort Worth, TX',
       school: 'Illinois Mathematics and Science Academy',
@@ -142,7 +125,7 @@ class UserData {
       phoneNumber: '+12345678015',
     ),
     User(
-      username: 'User16',
+      username: 'Oliver Martinez',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Charlotte, NC',
       school: 'The College Preparatory School',
@@ -150,7 +133,7 @@ class UserData {
       phoneNumber: '+12345678016',
     ),
     User(
-      username: 'User17',
+      username: 'Elijah Anderson',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Detroit, MI',
       school: 'Maggie L. Walker Governor’s School',
@@ -158,7 +141,7 @@ class UserData {
       phoneNumber: '+12345678017',
     ),
     User(
-      username: 'User18',
+      username: 'Sophie Thomas',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'El Paso, TX',
       school: 'Basis Scottsdale',
@@ -166,7 +149,7 @@ class UserData {
       phoneNumber: '+12345678018',
     ),
     User(
-      username: 'User19',
+      username: 'Lily Jackson',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Denver, CO',
       school: 'Stuyvesant High School',
@@ -174,7 +157,7 @@ class UserData {
       phoneNumber: '+12345678019',
     ),
     User(
-      username: 'User20',
+      username: 'Anthony Smith',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Seattle, WA',
       school: 'The Harker School',
@@ -182,7 +165,7 @@ class UserData {
       phoneNumber: '+12345678020',
     ),
     User(
-      username: 'User21',
+      username: 'Isabelle Moore',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Nashville, TN',
       school: 'Brooklyn Technical High School',
@@ -190,7 +173,7 @@ class UserData {
       phoneNumber: '+12345678021',
     ),
     User(
-      username: 'User22',
+      username: 'Julia Taylor',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Memphis, TN',
       school: 'Phillips Academy',
@@ -198,7 +181,7 @@ class UserData {
       phoneNumber: '+12345678022',
     ),
     User(
-      username: 'User23',
+      username: 'Benjamin Wilson',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Boston, MA',
       school: 'Thomas Jefferson High School for Science and Technology',
@@ -206,7 +189,7 @@ class UserData {
       phoneNumber: '+12345678023',
     ),
     User(
-      username: 'User24',
+      username: 'Noah Martinez',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Baltimore, MD',
       school: 'Illinois Mathematics and Science Academy',
@@ -214,7 +197,7 @@ class UserData {
       phoneNumber: '+12345678024',
     ),
     User(
-      username: 'User25',
+      username: 'Emily Clark',
       pictureUrl: 'https://via.placeholder.com/150',
       location: 'Albuquerque, NM',
       school: 'The College Preparatory School',
@@ -223,3 +206,4 @@ class UserData {
     ),
   ];
 }
+ 

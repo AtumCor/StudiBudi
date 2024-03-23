@@ -34,7 +34,7 @@ class _MatchingScreenState extends State<MatchingScreen> {
 
   void matchUser() {
     setState(() {
-      if (currentIndex < users.length - 1) {
+      if (currentIndex < users.length) {
         matchedUsers.add(users[currentIndex]);
         currentIndex++;
       } else {
