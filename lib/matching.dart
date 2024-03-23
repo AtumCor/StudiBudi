@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
 import 'user_data.dart';
+import 'matches.dart';
+
 
 class MatchingScreen extends StatefulWidget {
+    final List<User> matchedUsers;
+
+    final int currentIndex;
+
+  MatchingScreen({required this.matchedUsers, required this.currentIndex});
+
   @override
-  _MatchingScreenState createState() => _MatchingScreenState();
+  _MatchingScreenState createState() => _MatchingScreenState(matchedUsers: matchedUsers, currentIndex: currentIndex);
 }
 
 class _MatchingScreenState extends State<MatchingScreen> {
-  int currentIndex = 0;
+
+    _MatchingScreenState({required this.matchedUsers, required this.currentIndex});
+  List<User> matchedUsers;
+  int currentIndex;
 
   late final List<User> users = UserData.users;
 
-  int _selectedTabIndex = 1; // Assuming MatchingScreen is the middle tab in your BottomNavigationBar
+  int _selectedTabIndex = 0; // Assuming MatchingScreen is the middle tab in your BottomNavigationBar
 
   void declineUser() {
     setState(() {
@@ -24,6 +35,7 @@ class _MatchingScreenState extends State<MatchingScreen> {
   void matchUser() {
     setState(() {
       if (currentIndex < users.length - 1) {
+        matchedUsers.add(users[currentIndex]);
         currentIndex++;
       } else {
         // All users traversed, show message
@@ -48,11 +60,18 @@ class _MatchingScreenState extends State<MatchingScreen> {
   }
 
   void onTabTapped(int index) {
+    if (index == 1) {
+      // Navigate to MatchesDisplay when "Matches" tab is tapped
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MatchingDisplay(matchedUsers: matchedUsers, currentIndex: currentIndex,),
+        ),
+      );
+    }
+    // Handle other tabs if needed
     setState(() {
       _selectedTabIndex = index;
-      // Here you would typically navigate to another page or 
-      // change the body content depending on the tab
-      // e.g., Navigator.pushReplacement(...) for a different screen
     });
   }
 

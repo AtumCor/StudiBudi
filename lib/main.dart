@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => WelcomeScreen(),
         '/login': (context) => DestinationScreen(),
         '/registration': (context) => RegistrationScreen(),
-        '/matching': (context) => MatchingScreen(),
+        '/matching': (context) => MatchingScreen(matchedUsers: [], currentIndex: 0,),
       },
     );
   }

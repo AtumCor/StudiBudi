@@ -1,41 +1,98 @@
 import 'package:flutter/material.dart';
+import 'user_data.dart';
+import 'messageInterface.dart';
 import 'matching.dart';
 
-class MatchesDisplay extends StatelessWidget {
+class MatchingDisplay extends StatefulWidget {
   final List<User> matchedUsers;
 
-  MatchesDisplay({required this.matchedUsers});
+  final int currentIndex;
+  MatchingDisplay({required this.matchedUsers, required this.currentIndex});
+
+  @override
+  _MatchingDisplayState createState() => _MatchingDisplayState(matchedUsers: matchedUsers, currentIndex: currentIndex);
+}
+
+class _MatchingDisplayState extends State<MatchingDisplay> {
+  final List<User> matchedUsers;
+
+  final int currentIndex;
+  int _selectedTabIndex = 1;
+
+  _MatchingDisplayState({required this.matchedUsers, required this.currentIndex });
+
+
+  void onTabTapped(int index) {
+    if (index == 0) {
+      // Navigate to MatchesDisplay when "Matches" tab is tapped
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MatchingScreen(matchedUsers: matchedUsers, currentIndex: currentIndex),
+        ),
+      );
+    }
+    // Handle other tabs if needed
+    setState(() {
+      _selectedTabIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Matches'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Matched Users:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 16),
-            Expanded(
-              child: ListView.builder(
-                itemCount: matchedUsers.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text(matchedUsers[index].username),
-                    subtitle: Text(matchedUsers[index].location),
-                    // Add more user information as needed
-                  );
-                },
+      appBar: null,
+      body: matchedUsers.length > 0 ? ListView.builder(
+  itemCount: matchedUsers.length,
+  itemBuilder: (context, index) {
+    return Column(
+      children: [
+        ListTile(
+          leading: CircleAvatar(
+            radius: 20, // Adjust the radius as needed
+            backgroundImage: NetworkImage(matchedUsers[index].pictureUrl), // Use the actual URL of the user's profile image
+          ),
+          title: Text(matchedUsers[index].username),
+          onTap: () {
+            // Navigate to user profile screen when tapped
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => UserProfileScreen(user: matchedUsers[index]),
               ),
-            ),
-          ],
+            );
+          },
         ),
+        Divider(
+          height: 1, // Adjust the height of the divider as needed
+          color: Colors.grey, // Set the color of the divider
+          thickness: 1, // Set the thickness of the divider
+        ),
+      ],
+    );
+  },
+)
+ : 
+        Text('Currently no matches have been chosen.'),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
+        currentIndex: _selectedTabIndex,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Match',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Matches',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: 'Profile',
+          ),
+        ],
       ),
     );
   }
 }
+
