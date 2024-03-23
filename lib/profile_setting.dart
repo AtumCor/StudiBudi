@@ -61,8 +61,8 @@ class _ProfilePageState extends State<ProfilePage> {
         title: Text("Profile Page"),
       ),
       body: Center(
+        
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('Username: ${widget.username}'),
             // Add other user details here based on your User class

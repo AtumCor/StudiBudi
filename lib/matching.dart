@@ -119,7 +119,7 @@ class _MatchingScreenState extends State<MatchingScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Username: ${users[currentIndex].username}',
+                                'Username: ${users[currentIndex].name}',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
                               SizedBox(height: 8),
