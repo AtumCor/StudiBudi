@@ -42,6 +42,8 @@ class _MatchingScreenState extends State<MatchingScreen> {
     // Add more users as needed
   ];
 
+  int _selectedTabIndex = 1; // Assuming MatchingScreen is the middle tab in your BottomNavigationBar
+
   void declineUser() {
     setState(() {
       if (currentIndex < users.length - 1) {
@@ -73,6 +75,15 @@ class _MatchingScreenState extends State<MatchingScreen> {
           },
         );
       }
+    });
+  }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _selectedTabIndex = index;
+      // Here you would typically navigate to another page or 
+      // change the body content depending on the tab
+      // e.g., Navigator.pushReplacement(...) for a different screen
     });
   }
 
@@ -144,7 +155,24 @@ class _MatchingScreenState extends State<MatchingScreen> {
           : Center(
               child: Text('All potential users have been seen.'),
             ),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onTabTapped,
+        currentIndex: _selectedTabIndex,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: 'Match',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: 'Profile',
+          ),
+        ],
+      ),
     );
   }
-
 }
