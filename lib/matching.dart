@@ -27,7 +27,7 @@ class _MatchingScreenState extends State<MatchingScreen> {
   final List<User> users = [
     User(
       username: 'User1',
-      pictureUrl: './web/icons/image.png',
+      pictureUrl: './lib/img/image.png',
       location: 'City1',
       school: 'School1',
       classes: ['Math', 'Science'],
@@ -79,65 +79,72 @@ class _MatchingScreenState extends State<MatchingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Matching Screen'),
-      ),
+      appBar: null, // Remove the app bar (header)
       body: currentIndex < users.length
-          ? Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Card(
-                  elevation: 4,
-                  child: AspectRatio(
-                    aspectRatio: 16 / 9,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        users[currentIndex].pictureUrl,
-                        fit: BoxFit.cover,
+          ? LayoutBuilder(
+              builder: (BuildContext context, BoxConstraints constraints) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Expanded(
+                      flex: 7,
+                      child: Card(
+                        elevation: 4,
+                        child: AspectRatio(
+                          aspectRatio: 16 / 9,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.network(
+                              users[currentIndex].pictureUrl,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(height: 8),
-                Card(
-                  elevation: 4,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Username: ${users[currentIndex].username}',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                    Expanded(
+                      flex: 3,
+                      child: Card(
+                        elevation: 4,
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Username: ${users[currentIndex].username}',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              SizedBox(height: 8),
+                              Text('Location: ${users[currentIndex].location}'),
+                              Text('School: ${users[currentIndex].school}'),
+                              Text('Classes: ${users[currentIndex].classes.join(', ')}'),
+                            ],
+                          ),
                         ),
-                        SizedBox(height: 8),
-                        Text('Location: ${users[currentIndex].location}'),
-                        Text('School: ${users[currentIndex].school}'),
-                        Text('Classes: ${users[currentIndex].classes.join(', ')}'),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        ElevatedButton(
+                          onPressed: declineUser,
+                          child: Text('Decline'),
+                        ),
+                        ElevatedButton(
+                          onPressed: matchUser,
+                          child: Text('Match'),
+                        ),
                       ],
                     ),
-                  ),
-                ),
-                SizedBox(height: 16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    ElevatedButton(
-                      onPressed: declineUser,
-                      child: Text('Decline'),
-                    ),
-                    ElevatedButton(
-                      onPressed: matchUser,
-                      child: Text('Match'),
-                    ),
                   ],
-                ),
-              ],
+                );
+              },
             )
           : Center(
               child: Text('All potential users have been seen.'),
             ),
     );
   }
+
 }
