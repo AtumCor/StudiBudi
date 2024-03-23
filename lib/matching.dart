@@ -69,6 +69,13 @@ class _MatchingScreenState extends State<MatchingScreen> {
           builder: (context) => MatchingDisplay(matchedUsers: matchedUsers, currentIndex: currentIndex, username: username,),
         ),
       );
+    }else if(index == 2){
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProfilePage(username: matchedUsers[currentIndex].username, password: matchedUsers[currentIndex].password, location: matchedUsers[currentIndex].location, school: matchedUsers[currentIndex].school),
+        ),
+      );
     }
     // Handle other tabs if needed
     setState(() {

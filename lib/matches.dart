@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'user_data.dart';
 import 'messageInterface.dart';
 import 'matching.dart';
+import 'profile_setting.dart';
+import 'package:your_package/profile_page.dart';
 
 class MatchingDisplay extends StatefulWidget {
   final List<User> matchedUsers;
@@ -29,6 +31,13 @@ class _MatchingDisplayState extends State<MatchingDisplay> {
         context,
         MaterialPageRoute(
           builder: (context) => MatchingScreen(matchedUsers: matchedUsers, currentIndex: currentIndex, username: username,),
+        ),   
+      );
+    }else if(index == 2){
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProfilePage(username: matchedUsers[currentIndex].username, password: matchedUsers[currentIndex].password, location: matchedUsers[currentIndex].location, school: matchedUsers[currentIndex].school, phoneNumber: matchedUsers[currentIndex].phoneNumber),
         ),
       );
     }
