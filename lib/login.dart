@@ -42,6 +42,7 @@ class DestinationScreen extends StatelessWidget {
           ],
         ),
       ),
+      
     );
   }
 }
