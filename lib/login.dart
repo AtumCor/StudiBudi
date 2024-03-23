@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'registration.dart'; // Import the registration screen file
 import 'matching.dart';
 
+import 'profile_setting.dart';
+
 class DestinationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
