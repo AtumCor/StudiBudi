@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'user_data.dart';
 import 'matches.dart';
-
+import 'profile_setting.dart';
 
 class MatchingScreen extends StatefulWidget {
     final List<User> matchedUsers;
@@ -73,7 +73,7 @@ class _MatchingScreenState extends State<MatchingScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => ProfilePage(username: matchedUsers[currentIndex].username, password: matchedUsers[currentIndex].password, location: matchedUsers[currentIndex].location, school: matchedUsers[currentIndex].school),
+          builder: (context) => ProfilePage(username: username, matchedUsers: matchedUsers, currentIndex: currentIndex),
         ),
       );
     }
