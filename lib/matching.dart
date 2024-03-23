@@ -1,23 +1,5 @@
 import 'package:flutter/material.dart';
-import 'matches.dart';
-
-class User {
-  final String username;
-  final String pictureUrl;
-  final String location;
-  final String school;
-  final List<String> classes;
-  final String number;
-
-  User({
-    required this.username,
-    required this.pictureUrl,
-    required this.location,
-    required this.school,
-    required this.classes,
-    required this.number,
-  });
-}
+import 'user_data.dart';
 
 class MatchingScreen extends StatefulWidget {
   @override
@@ -26,27 +8,10 @@ class MatchingScreen extends StatefulWidget {
 
 class _MatchingScreenState extends State<MatchingScreen> {
   int currentIndex = 0;
-  List<User> matchedUsers = [];
 
-  final List<User> users = [
-    User(
-      username: 'User1',
-      pictureUrl: 'lib/img/image.png',
-      location: 'City1',
-      school: 'School1',
-      classes: ['Math', 'Science'],
-    ),
-    User(
-      username: 'User2',
-      pictureUrl: 'https://example.com/user2.jpg',
-      location: 'City2',
-      school: 'School2',
-      classes: ['History', 'English'],
-    ),
-    // Add more users as needed
-  ];
+  late final List<User> users = UserData.users;
 
-  int _selectedTabIndex = 0; // Assuming MatchingScreen is the middle tab in your BottomNavigationBar
+  int _selectedTabIndex = 1; // Assuming MatchingScreen is the middle tab in your BottomNavigationBar
 
   void declineUser() {
     setState(() {
@@ -59,10 +24,9 @@ class _MatchingScreenState extends State<MatchingScreen> {
   void matchUser() {
     setState(() {
       if (currentIndex < users.length - 1) {
-        matchedUsers.add(users[currentIndex]); // Add matched user to the list
         currentIndex++;
       } else {
-        // All users traversed, show message or handle as needed
+        // All users traversed, show message
         showDialog(
           context: context,
           builder: (BuildContext context) {
@@ -84,18 +48,11 @@ class _MatchingScreenState extends State<MatchingScreen> {
   }
 
   void onTabTapped(int index) {
-    if (index == 1) {
-      // Navigate to MatchesDisplay when "Matches" tab is tapped
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => MatchesDisplay(matchedUsers: matchedUsers),
-        ),
-      );
-    }
-    // Handle other tabs if needed
     setState(() {
       _selectedTabIndex = index;
+      // Here you would typically navigate to another page or 
+      // change the body content depending on the tab
+      // e.g., Navigator.pushReplacement(...) for a different screen
     });
   }
 
@@ -119,7 +76,7 @@ class _MatchingScreenState extends State<MatchingScreen> {
                             borderRadius: BorderRadius.circular(8),
                             child: Image.network(
                               users[currentIndex].pictureUrl,
-                              fit: BoxFit.fitHeight,
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ),
