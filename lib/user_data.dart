@@ -68,7 +68,7 @@ class UserData {
 
     User(
       name: 'David Miller',
-      pictureUrl: '',
+      pictureUrl: '/img/david_miller.webp',
       location: 'Phoenix, AZ',
       school: 'Thomas Jefferson High School for Science and Technology',
       classes: ['Economics', 'Physical Education'],
@@ -78,7 +78,7 @@ class UserData {
     ),
     User(
       name: 'Emma Wilson',
-      pictureUrl: '',
+      pictureUrl: '/img/emma_wilson.webp',
       location: 'Philadelphia, PA',
       school: 'Illinois Mathematics and Science Academy',
       classes: ['Biology', 'Mathematics'],
@@ -88,7 +88,7 @@ class UserData {
     ),
     User(
       name: 'Olivia Brown',
-      pictureUrl: '',
+      pictureUrl: '/img/olivia_brown.webp',
       location: 'San Antonio, TX',
       school: 'The College Preparatory School',
       classes: ['Physics', 'English Literature'],
@@ -98,7 +98,7 @@ class UserData {
     ),
     User(
       name: 'Ethan Davis',
-      pictureUrl: '',
+      pictureUrl: '/img/ethan_davis.webp',
       location: 'San Diego, CA',
       school: 'Maggie L. Walker Governor’s School',
       classes: ['Chemistry', 'World History'],
@@ -108,7 +108,7 @@ class UserData {
     ),
     User(
       name: 'Ava Martinez',
-      pictureUrl: '',
+      pictureUrl: '/img/ava_martinez.webp',
       location: 'Dallas, TX',
       school: 'Basis Scottsdale',
       classes: ['Biology', 'Art'],
@@ -118,7 +118,7 @@ class UserData {
     ),
     User(
       name: 'Isabella Rodriguez',
-      pictureUrl: '',
+      pictureUrl: '/img/isabella_rodriguez.webp',
       location: 'San Jose, CA',
       school: 'Stuyvesant High School',
       classes: ['Economics', 'Physical Education'],
@@ -128,7 +128,7 @@ class UserData {
     ),
     User(
       name: 'Mason Lee',
-      pictureUrl: '',
+      pictureUrl: '/img/mason_lee.webp',
       location: 'Austin, TX',
       school: 'The Harker School',
       classes: ['Mathematics', 'Computer Science'],
@@ -138,7 +138,7 @@ class UserData {
     ),
     User(
       name: 'Lucas Gonzalez',
-      pictureUrl: '',
+      pictureUrl: '/img/lucas_gonzalez.webp',
       location: 'Jacksonville, FL',
       school: 'Brooklyn Technical High School',
       classes: ['English Literature', 'Physics'],
@@ -148,7 +148,7 @@ class UserData {
     ),
     User(
       name: 'Mia Harris',
-      pictureUrl: '',
+      pictureUrl: '/img/mia_harris.webp',
       location: 'San Francisco, CA',
       school: 'Phillips Academy',
       classes: ['World History', 'Chemistry'],
@@ -158,7 +158,7 @@ class UserData {
     ),
     User(
       name: 'Charlotte Young',
-      pictureUrl: '',
+      pictureUrl: '/img/charlotte_young.webp',
       location: 'Columbus, OH',
       school: 'Thomas Jefferson High School for Science and Technology',
       classes: ['Art', 'Biology'],
@@ -168,7 +168,7 @@ class UserData {
     ),
     User(
       name: 'Amelia Hernandez',
-      pictureUrl: '',
+      pictureUrl: '/img/amelia_hernandez.webp',
       location: 'Fort Worth, TX',
       school: 'Illinois Mathematics and Science Academy',
       classes: ['Physical Education', 'Economics'],
@@ -178,7 +178,7 @@ class UserData {
     ),
     User(
       name: 'Oliver Martinez',
-      pictureUrl: '',
+      pictureUrl: '/img/oliver_martinez.webp',
       location: 'Charlotte, NC',
       school: 'The College Preparatory School',
       classes: ['Mathematics', 'Computer Science'],
@@ -188,7 +188,7 @@ class UserData {
     ),
     User(
       name: 'Elijah Anderson',
-      pictureUrl: '',
+      pictureUrl: '/img/elijah_anderson.webp',
       location: 'Detroit, MI',
       school: 'Maggie L. Walker Governor’s School',
       classes: ['English Literature', 'Physics'],
@@ -198,7 +198,7 @@ class UserData {
     ),
     User(
       name: 'Sophie Thomas',
-      pictureUrl: '',
+      pictureUrl: '/img/sophie_thomas.webp',
       location: 'El Paso, TX',
       school: 'Basis Scottsdale',
       classes: ['World History', 'Chemistry'],
@@ -208,7 +208,7 @@ class UserData {
     ),
     User(
       name: 'Lily Jackson',
-      pictureUrl: '',
+      pictureUrl: '/img/lily_jackson.webp',
       location: 'Denver, CO',
       school: 'Stuyvesant High School',
       classes: ['Art', 'Biology'],
@@ -218,7 +218,7 @@ class UserData {
     ),
     User(
       name: 'Anthony Smith',
-      pictureUrl: '',
+      pictureUrl: '/img/anthony_smith.webp',
       location: 'Seattle, WA',
       school: 'The Harker School',
       classes: ['Physical Education', 'Economics'],
@@ -228,7 +228,7 @@ class UserData {
     ),
     User(
       name: 'Isabelle Moore',
-      pictureUrl: '',
+      pictureUrl: '/img/isabelle_moore.webp',
       location: 'Nashville, TN',
       school: 'Brooklyn Technical High School',
       classes: ['Mathematics', 'Computer Science'],
@@ -238,7 +238,7 @@ class UserData {
     ),
     User(
       name: 'Julia Taylor',
-      pictureUrl: '',
+      pictureUrl: '/img/julia_taylor.webp',
       location: 'Memphis, TN',
       school: 'Phillips Academy',
       classes: ['English Literature', 'Physics'],
@@ -248,7 +248,7 @@ class UserData {
     ),
     User(
       name: 'Benjamin Wilson',
-      pictureUrl: '',
+      pictureUrl: '/img/benjamin_wilson.webp',
       location: 'Boston, MA',
       school: 'Thomas Jefferson High School for Science and Technology',
       classes: ['World History', 'Chemistry'],
@@ -258,7 +258,7 @@ class UserData {
     ),
     User(
       name: 'Noah Martinez',
-      pictureUrl: '',
+      pictureUrl: '/img/noah_martinez.webp',
       location: 'Baltimore, MD',
       school: 'Illinois Mathematics and Science Academy',
       classes: ['Art', 'Biology'],
@@ -268,7 +268,7 @@ class UserData {
     ),
     User(
       name: 'Emily Clark',
-      pictureUrl: '',
+      pictureUrl: '/img/emily_clark.webpr',
       location: 'Albuquerque, NM',
       school: 'The College Preparatory School',
       classes: ['Physical Education', 'Economics'],
