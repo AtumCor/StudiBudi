@@ -20,6 +20,16 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   int _selectedTabIndex = 2; // Initialize with the index of 'Profile' tab
+    late User currentUser; // Declare currentUser as late to initialize later
+
+  @override
+  void initState() {
+    super.initState();
+    // Find and set currentUser if it exists in the list
+    currentUser = UserData.users.firstWhere(
+      (user) => user.username == widget.username,
+    );
+  } // Declare currentUser as late to initialize later
 
   void onTabTapped(int index) {
     if (index == 0) {
@@ -53,28 +63,53 @@ class _ProfilePageState extends State<ProfilePage> {
     });
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
     // Use the properties from widget in your widget build method
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Profile Page"),
-      ),
-      body: Center(
-        
-        child: Column(
-          children: <Widget>[
-            Text('Username: ${widget.username}'),
-            // Add other user details here based on your User class
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/login');
-              },
-              child: Text('Logout'),
-            ),
-          ],
+      appBar: null,
+      body: Column(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Text('Hello, ${widget.username}'), // Display "Hello, username"
         ),
-      ),
+        Expanded(
+          child: ListView(
+            children: <Widget>[
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(currentUser.pictureUrl ),
+                ),
+                title: Text('Username: ${currentUser.username }'),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Location: ${currentUser.location }'),
+                    Text('School: ${currentUser.school }'),
+                    Text('Phone Number: ${currentUser.phoneNumber }'),
+                    // Add other user details as needed
+                  ],
+                ),
+              ),
+              Divider(
+                height: 1, // Adjust the height of the divider as needed
+                color: Colors.grey, // Set the color of the divider
+                thickness: 1, // Set the thickness of the divider
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login');
+                },
+                child: Text('Logout'),
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _selectedTabIndex,
