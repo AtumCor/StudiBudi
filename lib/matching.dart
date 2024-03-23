@@ -1,20 +1,5 @@
 import 'package:flutter/material.dart';
-
-class User {
-  final String username;
-  final String pictureUrl;
-  final String location;
-  final String school;
-  final List<String> classes;
-
-  User({
-    required this.username,
-    required this.pictureUrl,
-    required this.location,
-    required this.school,
-    required this.classes,
-  });
-}
+import 'user_data.dart';
 
 class MatchingScreen extends StatefulWidget {
   @override
@@ -24,23 +9,7 @@ class MatchingScreen extends StatefulWidget {
 class _MatchingScreenState extends State<MatchingScreen> {
   int currentIndex = 0;
 
-  final List<User> users = [
-    User(
-      username: 'User1',
-      pictureUrl: './lib/img/image.png',
-      location: 'City1',
-      school: 'School1',
-      classes: ['Math', 'Science'],
-    ),
-    User(
-      username: 'User2',
-      pictureUrl: 'https://example.com/user2.jpg',
-      location: 'City2',
-      school: 'School2',
-      classes: ['History', 'English'],
-    ),
-    // Add more users as needed
-  ];
+  late final List<User> users = UserData.users;
 
   int _selectedTabIndex = 1; // Assuming MatchingScreen is the middle tab in your BottomNavigationBar
 
