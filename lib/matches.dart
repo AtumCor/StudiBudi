@@ -7,21 +7,21 @@ import 'package:your_package/profile_page.dart';
 
 class MatchingDisplay extends StatefulWidget {
   final List<User> matchedUsers;
-
+  final String username;
   final int currentIndex;
-  MatchingDisplay({required this.matchedUsers, required this.currentIndex});
+  MatchingDisplay({required this.matchedUsers, required this.currentIndex, required this.username});
 
   @override
-  _MatchingDisplayState createState() => _MatchingDisplayState(matchedUsers: matchedUsers, currentIndex: currentIndex);
+  _MatchingDisplayState createState() => _MatchingDisplayState(matchedUsers: matchedUsers, currentIndex: currentIndex, username: username);
 }
 
 class _MatchingDisplayState extends State<MatchingDisplay> {
   final List<User> matchedUsers;
-
+  final String username;
   final int currentIndex;
   int _selectedTabIndex = 1;
 
-  _MatchingDisplayState({required this.matchedUsers, required this.currentIndex });
+  _MatchingDisplayState({required this.matchedUsers, required this.currentIndex, required this.username});
 
 
   void onTabTapped(int index) {
@@ -30,7 +30,7 @@ class _MatchingDisplayState extends State<MatchingDisplay> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => MatchingScreen(matchedUsers: matchedUsers, currentIndex: currentIndex),
+          builder: (context) => MatchingScreen(matchedUsers: matchedUsers, currentIndex: currentIndex, username: username,),
         ),   
       );
     }else if(index == 2){
@@ -51,7 +51,7 @@ class _MatchingDisplayState extends State<MatchingDisplay> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: null,
-      body: matchedUsers.length > 0 ? ListView.builder(
+      body: matchedUsers.length > 0 ? ListView.builder( 
   itemCount: matchedUsers.length,
   itemBuilder: (context, index) {
     return Column(

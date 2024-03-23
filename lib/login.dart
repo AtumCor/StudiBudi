@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
-import 'registration.dart'; // Import the registration screen file
 import 'matching.dart';
 
-import 'profile_setting.dart';
+class DestinationScreen extends StatefulWidget {
+  @override
+  _DestinationScreenState createState() => _DestinationScreenState();
+}
 
-class DestinationScreen extends StatelessWidget {
+class _DestinationScreenState extends State<DestinationScreen> {
+  TextEditingController _usernameController = TextEditingController();
+  String username = '';
+
+  @override
+  void dispose() {
+    _usernameController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +27,12 @@ class DestinationScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
+              controller: _usernameController,
+              onChanged: (value) {
+                setState(() {
+                  username = value;
+                });
+              },
               decoration: InputDecoration(
                 hintText: 'Enter username',
               ),
@@ -30,21 +47,19 @@ class DestinationScreen extends StatelessWidget {
             SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/matching');
+                // Use the username variable as needed (e.g., pass it to another screen)
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MatchingScreen(matchedUsers: [], currentIndex: 0, username: username,),
+                  ),
+                );
               },
               child: Text('Submit'),
-            ),
-            SizedBox(height: 20.0),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/registration');
-              },
-              child: Text('Don\'t have an account? Register here.'),
             ),
           ],
         ),
       ),
-      
     );
   }
 }

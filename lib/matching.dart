@@ -5,20 +5,21 @@ import 'matches.dart';
 
 class MatchingScreen extends StatefulWidget {
     final List<User> matchedUsers;
-
+    final String username;
     final int currentIndex;
 
-  MatchingScreen({required this.matchedUsers, required this.currentIndex});
+  MatchingScreen({required this.matchedUsers, required this.currentIndex, required this.username});
 
   @override
-  _MatchingScreenState createState() => _MatchingScreenState(matchedUsers: matchedUsers, currentIndex: currentIndex);
+  _MatchingScreenState createState() => _MatchingScreenState(matchedUsers: matchedUsers, currentIndex: currentIndex, username: username);
 }
 
 class _MatchingScreenState extends State<MatchingScreen> {
 
-    _MatchingScreenState({required this.matchedUsers, required this.currentIndex});
+    _MatchingScreenState({required this.matchedUsers, required this.currentIndex, required this.username});
   List<User> matchedUsers;
   int currentIndex;
+  String username;
 
   late final List<User> users = UserData.users;
 
@@ -65,7 +66,7 @@ class _MatchingScreenState extends State<MatchingScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => MatchingDisplay(matchedUsers: matchedUsers, currentIndex: currentIndex,),
+          builder: (context) => MatchingDisplay(matchedUsers: matchedUsers, currentIndex: currentIndex, username: username,),
         ),
       );
     }else if(index == 2){
