@@ -103,7 +103,7 @@ class _MatchingScreenState extends State<MatchingScreen> {
                             borderRadius: BorderRadius.circular(8),
                             child: Image.network(
                               users[currentIndex].pictureUrl,
-                              fit: BoxFit.cover,
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
