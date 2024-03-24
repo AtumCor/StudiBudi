@@ -26,22 +26,28 @@ class _DestinationScreenState extends State<DestinationScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              controller: _usernameController,
-              onChanged: (value) {
-                setState(() {
-                  username = value;
-                });
-              },
-              decoration: InputDecoration(
-                hintText: 'Enter username',
+            Container(
+              width: MediaQuery.of(context).size.width * 0.6, // Set width to 60% of screen width
+              child: TextField(
+                controller: _usernameController,
+                onChanged: (value) {
+                  setState(() {
+                    username = value;
+                  });
+                },
+                decoration: InputDecoration(
+                  hintText: 'Enter username',
+                ),
               ),
             ),
             SizedBox(height: 20.0),
-            TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                hintText: 'Enter password',
+            Container(
+              width: MediaQuery.of(context).size.width * 0.6, // Set width to 60% of screen width
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Enter password',
+                ),
               ),
             ),
             SizedBox(height: 20.0),
