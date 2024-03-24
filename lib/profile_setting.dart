@@ -81,7 +81,7 @@ class _ProfilePageState extends State<ProfilePage> {
             children: <Widget>[
               ListTile(
                 leading: CircleAvatar(
-                  backgroundImage: NetworkImage(currentUser.pictureUrl ),
+                  backgroundImage: NetworkImage(currentUser.pictureUrl),
                 ),
                 title: Text('Username: ${currentUser.username }'),
                 subtitle: Column(

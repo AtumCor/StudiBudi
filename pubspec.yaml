@@ -88,3 +88,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  assets:
+    - img/alex_johnson.jpg
+    - img/maria_garcia.jpg
+    - img/john_smith.jpg
+    - img/sophia_williams.jpg
+    - img/david_miller.jpg
+    - img/mia_harris.jpg

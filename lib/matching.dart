@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'user_data.dart';
 import 'matches.dart';
 import 'profile_setting.dart';
@@ -93,17 +94,19 @@ class _MatchingScreenState extends State<MatchingScreen> {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Expanded(
-                      flex: 7,
-                      child: Card(
-                        elevation: 4,
-                        child: AspectRatio(
-                          aspectRatio: 16 / 9,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Image.network(
-                              users[currentIndex].pictureUrl,
-                              fit: BoxFit.contain,
+                    SafeArea(
+                      child: Expanded(
+                        flex: 7,
+                        child: Card(
+                          elevation: 4,
+                          child: AspectRatio(
+                            aspectRatio: 16 / 9,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                users[currentIndex].pictureUrl,
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
                         ),

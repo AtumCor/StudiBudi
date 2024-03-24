@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:studibudi/matching.dart';
+
 class _MatchingScreenState extends State<MatchingScreen> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
