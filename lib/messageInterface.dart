@@ -15,7 +15,8 @@ final TextEditingController controller = TextEditingController();
 class _UserProfileScreenState extends State<UserProfileScreen> {
   String message = 'Type your message...';
   String message1 = '';
-  String message2 = '';
+  String message2 = '...';
+  String messageTemp = '';
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +50,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
-                          message1,
+                          'Hi! Nice to meet you!',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -66,6 +67,23 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Text(
+                          message1,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 16),
+                                    Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Text(
                           message2,
                           style: TextStyle(color: Colors.white),
                         ),
@@ -77,7 +95,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                     controller: controller,
                     onChanged: (value) {
                       setState(() {
-                        message2 = value;
+                        messageTemp = value;
                       });
                     },
                     decoration: InputDecoration(
@@ -89,8 +107,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
                   ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        message1 = message2;
-                        message2 = message;
+                        message1 = messageTemp;
                         controller.clear();
                       });
                     },
